@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{recipe.title}}</h1>
+    <p>Description:<br>
+        {{recipe.description}}
+    </p>
+    <hr/>
+    <p>Ingredients:<br>
+        <ul>
+            {% for ingredient in ingredients %}
+                {% if ingredient != ''%}
+                    <li>{{ingredient}}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </p>
+    <hr/>
+    <p>Instructions:<br>
+        <ol>
+            {% for step in instructions %}
+                {% if step != ''%}
+                    <li>{{step}}</li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </p>
+    <br>
+    <a href = "{{url_for('delete_recipe', num = recipe.id)}}">Delete this recipe</a>
+    <br>
+    <a href = "{{url_for('recipe')}}">Return</a>
+{% endblock %}

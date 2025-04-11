@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Welcome to Food Recipe</h1>
+    <ul>
+        {% for recipe in recipes %}
+        <li>{{recipe}}</li>
+        {% endfor %}
+    </ul>
+    <a href = "{{url_for('login')}}">Log In</a>
+{% endblock %}

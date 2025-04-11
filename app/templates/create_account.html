@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Create an account</h1>
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <p>{{form.email.label}}<br/>
+    {{form.email()}}</p>
+
+    <p> {{form.username.label}}</br>
+    {{form.username()}}</p>
+
+    <p>{{form.password.label}}</br>
+    {{form.password()}}</p>
+
+    <p>{{form.submit()}}</p>
+</form>
+{% endblock %}

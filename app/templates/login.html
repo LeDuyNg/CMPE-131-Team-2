@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Sign In</title>
+</head>
+<body>
+    <h1>Sign In</h1>
+    <form action="" method="POST" novalidate>
+        {{form.hidden_tag()}}
+        <p> {{form.username.label}}</br>
+        {{form.username()}}</p>
+
+        <p>{{form.password.label}}</br>
+        <p>{{form.password()}}</p>
+
+        <p>{{form.submit()}}</p>
+        <p>{{form.remember_me()}}</p>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <a href = "{{url_for('create_account')}}">Create an Account</a>
+    <br>
+    <a href = "{{url_for('main')}}">Return to Home Page</a>
+</body>
+</html>

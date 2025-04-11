@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Your Food Recipes</h1>
+    <ul>
+        {% for recipe in recipes %}
+        <li><a = href = "{{url_for('retrieve_recipe', num = recipe.id)}}">{{recipe.title}}</a></li>
+        {% endfor %}
+    </ul>
+    <a href = "{{url_for('add_recipe')}}">Add New Recipe</a>
+    <br>
+    <a href = "{{url_for('logout')}}">Log Out</a>
+{% endblock %}
